@@ -1,0 +1,311 @@
+<style>
+.tree{
+  --spacing : 1.5rem;
+  --radius  : 10px;
+}
+
+.tree li{
+  display      : block;
+  position     : relative;
+  padding-left : calc(2 * var(--spacing) - var(--radius) - 2px);
+}
+
+.tree ul{
+  margin-left  : calc(var(--radius) - var(--spacing));
+  padding-left : 0;
+}
+
+.tree ul li{
+  border-left : 2px solid #ddd;
+}
+
+.tree ul li:last-child{
+  border-color : transparent;
+}
+
+.tree ul li::before{
+  content      : '';
+  display      : block;
+  position     : absolute;
+  top          : calc(var(--spacing) / -2);
+  left         : -2px;
+  width        : calc(var(--spacing) + 2px);
+  height       : calc(var(--spacing) + 1px);
+  border       : solid #ddd;
+  border-width : 0 0 2px 2px;
+}
+
+.tree summary{
+  display : block;
+  cursor  : pointer;
+}
+
+.tree summary::marker,
+.tree summary::-webkit-details-marker{
+  display : none;
+}
+
+.tree summary:focus{
+  outline : none;
+}
+
+.tree summary:focus-visible{
+  outline : 1px dotted #000;
+}
+
+.tree li::after,
+.tree summary::before{
+  content       : '';
+  display       : block;
+  position      : absolute;
+  top           : calc(var(--spacing) / 2 - var(--radius));
+  left          : calc(var(--spacing) - var(--radius) - 1px);
+  width         : calc(2 * var(--radius));
+  height        : calc(2 * var(--radius));
+  border-radius : 50%;
+  background    : #ddd;
+}
+
+.tree summary::before{
+  content     : '+';
+  z-index     : 1;
+  background  : #696;
+  color       : #fff;
+  line-height : calc(2 * var(--radius) - 2px);
+  text-align  : center;
+}
+
+.tree details[open] > summary::before{
+  content : '−';
+}
+  </style>
+
+  <?php 
+    $hostname='localhost';
+    $username='root';
+    $password='';
+    $db='wanix';
+
+    $conn=mysqli
+   ?>
+
+  <ul class="tree">
+  <li>
+    <details open>
+      <summary>Giant planets</summary>
+      <ul>
+        <li>
+          <details>
+            <summary>Gas giants</summary>
+            <ul>
+              <li>
+                <details>
+            <summary>Suraj</summary>
+            <ul>
+              <li>Jupiter</li>
+              <li>Saturn</li>
+            </ul>
+          </details>
+              </li>
+              <li>Saturn</li>
+            </ul>
+          </details>
+        </li>
+        <li>
+          <details>
+            <summary>Ice giants</summary>
+            <ul>
+              <li>Uranus</li>
+              <li>Neptune</li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </details>
+  </li>
+</ul>
+
+<!-- 
+<style>
+  $background: rgba(0,0,0,.73);
+$container-background: rgba(0,0,0,.45);
+$text: #a7a9ac;
+$text-hover: #fff;
+
+body {
+  background-color: $background;
+  color: white;
+}
+
+.container {
+  width: 25%;
+  height: 75%;
+  background: $container-background;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: overlay;
+}
+
+details {
+  //border-left: 1px solid;
+  padding-left: 16px;
+  padding-top: 8px;
+  position: relative;
+  outline: none;
+  
+  &:focus, &:active {
+    outline: none;
+  }
+  
+  &:last-child {
+    
+    &:before {
+      height: 16px;
+    }
+  }
+  
+  &:before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    top: -8px;
+    border-left: 1px dotted;
+  }
+  
+  &[open] {
+    
+    >summary {
+      
+      &::before {
+        width: 16px;
+      }
+      i {
+        &::before {
+          content: '\f1db';
+        }
+      }
+    }
+  }
+  
+  summary {
+    color: $text;
+    padding-left: 16px;
+    outline: none;
+    
+    &::-webkit-details-marker {
+      display: none
+    }
+    
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0px;
+      top: 16px;
+      left: 16px;
+      border-bottom: 1px dotted;
+    }
+  
+    &:focus, &:active {
+      outline: none;
+    }
+    
+    &:hover {
+      color: $text-hover;
+      cursor: pointer;
+      
+      .selector {
+        transition: background-color 0.3s;
+        background-color: rgba(73, 73, 74, 0.71);
+      }
+    }
+    
+    i {
+      font-size: 18px;
+      margin-left: -22px;
+      margin-right: 20px;
+      width: auto;
+      background: #414042;
+      border-radius: 6px;
+    }
+    .selector {
+      position: absolute;
+      top: 0;
+      left: -200px;
+      right: 0;
+      bottom: 0;
+      height: 30px;
+      pointer-events: none;
+      border-bottom: 1px solid #383838;
+      z-index: -1;
+    }
+  }
+  
+}
+</style>
+<div class="container">
+  <details>
+    <summary>
+      <i class="fa fa-circle"></i>
+      <div class="selector"></div>
+      Fruits
+    </summary>
+    <details>
+      <summary>
+        <i class="fa fa-circle"></i>
+        <div class="selector"></div>
+        Oranges
+      </summary>
+    </details>
+    <details>
+      <summary>
+        <i class="fa fa-circle"></i>
+        <div class="selector"></div>
+        Bananas
+      </summary>
+    </details>
+    <details>
+      <summary>
+        <i class="fa fa-circle"></i>
+        <div class="selector"></div>
+        Apples
+      </summary>
+      <details>
+        <summary>
+          <i class="fa fa-circle"></i>
+          <div class="selector"></div>
+          Granny Smith
+        </summary>
+        <details>
+          <summary>
+            <i class="fa fa-circle"></i>
+            <div class="selector"></div>
+            Michigan
+          </summary>
+        </details>
+        <details>
+          <summary>
+            <i class="fa fa-circle"></i>
+            <div class="selector"></div>
+            New York
+          </summary>
+        </details>
+      </details>
+    </details>
+  </details>
+  <details>
+    <summary>
+      <i class="fa fa-circle"></i>
+      <div class="selector"></div>
+      Vegetables
+    </summary>
+    <details>
+      <summary>
+        <i class="fa fa-circle"></i>
+        <div class="selector"></div>
+        Carrots
+      </summary>
+    </details>
+  </details>
+</div> -->
