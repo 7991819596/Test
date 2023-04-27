@@ -1,0 +1,10 @@
+https://stackoverflow.com/questions/74718500/laravel-9-project-deployed-on-plesk-shared-host-shows-the-just-the-main-page-the
+https://stackoverflow.com/questions/47068719/laravel-project-on-pleask-except-homepage-other-routes-are-not-working
+https://stackoverflow.com/questions/47068719/laravel-project-on-pleask-except-homepage-other-routes-are-not-working
+https://stackoverflow.com/questions/29586436/routes-not-working-after-deploying-laravel-5-project-into-hosting
+when in url opened by public then , firstly we should extract index file from public in roiute folder and remove ../ in route index file beside it url are not 
+working then extract all inside public folder content like css,js,admin asset and baseic asset of front page taken on route folder after then index page going on working 
+but perheps other links were not working means route not working then simply uper links open and copy that code and paset in route web.config folder , congrates 
+projects has executed....
+other wise contact to customer care center.
+
