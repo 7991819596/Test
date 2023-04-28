@@ -1,0 +1,11 @@
+$validatedData = $req->validate([
+         'event_image' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+
+        ]);
+        
+      $file=$req->file('event_image');
+      $fileExt=$file->getClientOriginalExtension();
+      $filename=rand(000000,9999999).'.'.$fileExt;
+      $req->event_image->move(public_path('event_image'), $filename);
+      
+      filename->this filename is add in table as a file name.
