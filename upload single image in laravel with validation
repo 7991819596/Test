@@ -9,3 +9,8 @@ $validatedData = $req->validate([
       $req->event_image->move(public_path('event_image'), $filename);
       
       filename->this filename is add in table as a file name.
+
+
+how to getting particular date in date
+$act_date = $req->event_actual_date;
+      $newact_date = substr($act_date, 4, strpos($act_date, "-"));
