@@ -1,0 +1,15 @@
+insert multidimentional array data
+    //      $datas[]=$req->data;
+    //  foreach($data as $data){
+    //      $pointData[]=[
+    //          'color_code_with_dying_id'=>$userId,
+    //          'chemicalName'=>$data['chemicalName'],
+    //          'chemicalWeight'=>$data['chemicalWeight'],
+    //          'chemicalVendorName'=>$data['chemicalVendorName'],
+    //          'dyisName'=>$data['chemicalName'],
+    //          'dyisWeight'=>$data['chemicalWeight'],
+    //          'dyisVendorName'=>$data['chemicalVendorName'],
+    //      ];
+    //  }
+    //  DB::table('colour_code_with_dying_details')->insert($pointData);
+       
