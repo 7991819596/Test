@@ -69,3 +69,30 @@ https://stackoverflow.com/questions/54522830/bootstrap-4-loading-spinner-in-butt
     </script>
   </body>
 </html>
+-----------------------------------------------------------------clip path-----------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>tt</title>
+	<style>
+
+.clipPath{
+	background: black;
+	clip-path: polygon(10% 0,100% 0,100% 100%, 0% 100%);
+	height: 100px;
+}
+
+
+	</style>
+</head>
+<body>
+	<div class=''>
+<div class="clipPath">
+	
+	<p>This is a caption</p>
+	
+</div>
+</body>
+</html>
